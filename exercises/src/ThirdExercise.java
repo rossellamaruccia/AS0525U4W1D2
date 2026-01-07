@@ -1,18 +1,19 @@
-import java.util.Scanner;
+static void main() {
+    Scanner scanner = new Scanner(System.in);
 
-public class ThirdExercise {
-    public static boolean PrintLoop(String x) {
-        while (!x.equals(":q")) {
-            System.out.println(x.toCharArray());
+    while (true) {
+        System.out.println("Write a word: ");
+        String text = scanner.nextLine();
+        if (text.equals(":q")) break;
+        String SepText = "";
+        for (int i = 0; i < text.length(); i++) {
+            if (i == text.length() - 1) {
+                SepText = SepText + text.charAt(i);
+            } else {
+                SepText = SepText + text.charAt(i) + ",";
+            }
+
         }
-        return false;
+        System.out.println(SepText);
     }
-};
-
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a word:");
-        String str1 = sc.nextLine();
-        System.out.println(ThirdExercise.PrintLoop(str1));
-    }
+}
